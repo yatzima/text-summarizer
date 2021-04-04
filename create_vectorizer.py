@@ -5,6 +5,7 @@ import spacy
 import pickle
 import time
 import numpy as np
+import en_core_web_sm
 
 from tqdm import tqdm
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -13,7 +14,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 def main():
     t0 = time.time()
     print('loading spacy model')
-    nlp = spacy.load("en_core_web_md")
+    nlp = en_core_web_sm.load()
     corpora = []
     data_path = 'data'
 
