@@ -7,9 +7,9 @@ import pandas as pd
 import networkx as nx
 import streamlit as st
 import matplotlib.pyplot as plt
+import en_core_web_sm
 
 from sklearn.metrics.pairwise import cosine_similarity
-
 
 #@st.cache
 def load_vectorizer(filename='vectorizer.pkl'):
@@ -41,7 +41,7 @@ text  = st.text_area("Input your text here:", height=400)
 
 # Load stuff
 vectorizer = load_vectorizer()
-nlp = spacy.load("en_core_web_md")
+nlp = en_core_web_sm.load()
 
 if text:
     text_sentences = nlp(text)
